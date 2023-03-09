@@ -1,0 +1,10 @@
+export './colors.dart';
+export './lists.dart';
+export './strings.dart';
+export 'package:velocity_x/velocity_x.dart';
+export 'package:flutter/material.dart';
+export './images.dart';
+export '../views/widgets/style_text.dart';
+export '../const/firebase_consts.dart';
+export 'package:get/get.dart';
+export 'package:firebase_auth/firebase_auth.dart';
