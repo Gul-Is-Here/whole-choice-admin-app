@@ -1,5 +1,6 @@
-// Create a list of colors
-import '../../../const/const.dart';
+import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 List<Color> colors = [
   Colors.green,
@@ -16,52 +17,46 @@ List<Color> colors = [
   Colors.blueGrey
 ];
 
-// Create a Stateful Widget
 class ColorSelector extends StatefulWidget {
-  const ColorSelector({super.key});
-
   @override
-  // ignore: library_private_types_in_public_api
   _ColorSelectorState createState() => _ColorSelectorState();
 }
 
-// Create a State class
 class _ColorSelectorState extends State<ColorSelector> {
-  // Create a set of selected colors
-  Set<Color> selectedColors = <Color>{};
+  List<int> selectedColors = [];
 
-  // Create a method for adding colors to the set
   void _onColorTapped(Color color) {
     setState(() {
-      selectedColors.add(color);
+      final colorValue = color.value;
+      if (selectedColors.contains(colorValue)) {
+        selectedColors.remove(colorValue);
+      } else {
+        selectedColors.add(colorValue);
+      }
+    });
+
+    final user = FirebaseAuth.instance.currentUser;
+    final productRef =
+        FirebaseFirestore.instance.collection('products').doc(user!.uid);
+
+    productRef.update({
+      'p_color': selectedColors,
     });
   }
 
-  // Create a method for removing colors from the set
-  void _onColorDeselected(Color color) {
-    setState(() {
-      selectedColors.remove(color);
-    });
+  bool _isColorSelected(Color color) {
+    return selectedColors.contains(color.value);
   }
 
-  // Create a method for displaying the colors
   Widget _buildColorList() {
     return ListView.builder(
       itemCount: colors.length,
       itemBuilder: (context, index) {
         Color color = colors[index];
-        // Check if the color is selected
-        bool isSelected = selectedColors.contains(color);
-        // Display the color
+        bool isSelected = _isColorSelected(color);
         return GestureDetector(
           onTap: () {
-            if (isSelected) {
-              // Remove color from set
-              _onColorDeselected(color);
-            } else {
-              // Add color to set
-              _onColorTapped(color);
-            }
+            _onColorTapped(color);
           },
           child: Container(
             margin: const EdgeInsets.all(10.0),

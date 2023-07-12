@@ -18,7 +18,7 @@ Widget dashBoardButton(context, {title, count, Icon}) {
       .box
       .color(purpleColor)
       .rounded
-      .size(size.width * .4, 80)
+      .size(size.width * .9, 80)
       .padding(const EdgeInsets.all(8))
       .make();
 }

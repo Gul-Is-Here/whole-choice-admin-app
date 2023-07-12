@@ -14,6 +14,7 @@ import '../models/category_model.dart';
 class ProductController extends GetxController {
   var isloading = false.obs;
   //  text editing controllers
+  late Rx<Color> selectedColor;
 
   var pnameController = TextEditingController();
   var pdescController = TextEditingController();
@@ -116,5 +117,32 @@ class ProductController extends GetxController {
 
   removeProduct(docId) async {
     await firestore.collection(productsCollection).doc(docId).delete();
+  }
+
+  void saveColor(Color color) {
+    // Save the color to the Firebase color list
+    // Implement your logic to save the color to Firebase here
+    // For example, you can use Firebase Firestore or Realtime Database
+    // to store the selected color.
+    // Replace `yourFirebaseCollection` with the actual collection name in Firebase.
+    final colorData = {
+      'red': color.red,
+      'green': color.green,
+      'blue': color.blue,
+    };
+    // Save the color data to Firebase
+    // Replace `yourFirebaseDocumentId` with the actual document ID in Firebase.
+    // For example, you can generate a unique ID using `FirebaseFirestore.instance.collection('yourFirebaseCollection').doc().id`
+    FirebaseFirestore.instance
+        .collection('yourFirebaseCollection')
+        .doc('yourFirebaseDocumentId')
+        .set(colorData)
+        .then((value) {
+      // Color saved successfully
+      // Perform any additional actions if needed
+    }).catchError((error) {
+      // Error occurred while saving the color
+      // Handle the error gracefully
+    });
   }
 }

@@ -29,7 +29,7 @@ const appname = "Whole Choice Seller App",
     chat = "Chats",
     orderDetail = "Order Detail",
     anyProblem = "In case of any difficulty, contact administration",
-    credit = "@Gul Faraz Ahmed";
+    credit = "@Whole Choice";
 //  Shope Settibgs strings
 
 const nameHint = "eg. Vendor Name",

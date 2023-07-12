@@ -24,7 +24,7 @@ class ProductsScreen extends StatelessWidget {
             await controller.getCategories();
             controller.populateCategoryList();
 
-            Get.to(() => const AddProduct());
+            Get.to(() => AddProduct());
           },
           child: const Icon(Icons.add),
         ),

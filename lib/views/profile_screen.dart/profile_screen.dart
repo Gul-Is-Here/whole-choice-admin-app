@@ -45,14 +45,16 @@ class ProfileScreen extends StatelessWidget {
                     leading: controller.snapshotData['imageUrl'] == ''
                         ? Image.asset(
                             imgProduct,
-                            width: 100,
+                            width: 150,
+                            height: 200,
                             fit: BoxFit.cover,
-                          ).box.roundedFull.clip(Clip.antiAlias).make()
-                        : Image.network(
-                            controller.snapshotData['imageUrl'],
-                            width: 100,
-                            fit: BoxFit.cover,
-                          ).box.roundedFull.clip(Clip.antiAlias).make(),
+                          ).box.rounded.clip(Clip.antiAlias).make()
+                        : Image.network(controller.snapshotData['imageUrl'],
+                                width: 120, fit: BoxFit.contain)
+                            .box
+                            .roundedFull
+                            .clip(Clip.antiAlias)
+                            .make(),
                     // leading: Image.asset(imgProduct)
                     //     .box
                     //     .roundedFull
@@ -76,7 +78,7 @@ class ProfileScreen extends StatelessWidget {
                                 onTap: () {
                                   switch (index) {
                                     case 0:
-                                      Get.to(() => ShopeSettings());
+                                      Get.to(() => const ShopeSettings());
                                       break;
                                     case 1:
                                       Get.to(() => const MessagesScreen());

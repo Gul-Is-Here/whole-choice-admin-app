@@ -1,7 +1,8 @@
 import 'package:whole_choice_admin_pannel/const/const.dart';
 
-Widget customTextField({label, hint, controller, isDesc = false}) {
+Widget customTextField({label, hint, controller, isDesc = false, valid}) {
   return TextFormField(
+    validator: valid,
     controller: controller,
     style: const TextStyle(color: white),
     cursorColor: white,

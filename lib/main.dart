@@ -4,7 +4,6 @@ import 'package:whole_choice_admin_pannel/views/auth_screen/login_screen.dart';
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:whole_choice_admin_pannel/views/home_screen/home.dart';
 
-import 'const/const.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,18 +40,20 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    // print(Colors.green.value);
-    // print(Colors.blue.value);
-    // print(Colors.red.value);
-    // print(Colors.orange.value);
-    // print(Colors.black.value);
-    // print(Colors.white.value);
-    // print(Colors.pink.value);
-    // print(Colors.purple.value);
-    // print(Colors.indigo.value);
-    // print(Colors.deepOrange.value);
-    // print(Colors.blueAccent.value);
-    // print(Colors.blueGrey.value);
+    print(Colors.black.value);
+    print(Colors.white.value);
+    print(Colors.green.value);
+    print(Colors.blue.value);
+    print(Colors.red.value);
+    print(Colors.orange.value);
+    print(Colors.pink.value);
+    print(Colors.purple.value);
+    print(Colors.indigo.value);
+    print(Colors.deepOrange.value);
+    print(Colors.blueAccent.value);
+    print(Colors.blueGrey.value);
+    print(Colors.lightBlue.value);
+    print(Colors.lightGreen.value);
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: appname,

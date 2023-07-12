@@ -1,4 +1,3 @@
-import 'package:get/get.dart';
 import 'package:whole_choice_admin_pannel/const/const.dart';
 
 class ProductDetails extends StatelessWidget {
@@ -33,7 +32,7 @@ class ProductDetails extends StatelessWidget {
                 itemCount: data['p_imgs'].length,
                 itemBuilder: (context, index) {
                   return Image.network(data['p_imgs'][index],
-                      width: double.infinity, fit: BoxFit.cover);
+                      width: double.infinity, fit: BoxFit.fitHeight);
                 }),
             10.heightBox,
             Padding(

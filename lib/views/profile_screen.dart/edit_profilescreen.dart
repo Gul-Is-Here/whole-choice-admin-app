@@ -64,6 +64,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                               name: controller.nameController.text,
                               password: controller.newpassController.text);
 
+                          // ignore: use_build_context_synchronously
                           VxToast.show(context, msg: "Updated");
                         } else if (controller
                                 .oldpassController.text.isEmptyOrNull &&
@@ -72,8 +73,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                               imgUrl: controller.profileImageLink,
                               name: controller.nameController.text,
                               password: controller.snapshotData['password']);
+                          // ignore: use_build_context_synchronously
                           VxToast.show(context, msg: "Some error occured...");
                         } else {
+                          // ignore: use_build_context_synchronously
                           VxToast.show(context, msg: "Some error occured");
                           controller.isLoading(false);
                         }

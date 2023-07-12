@@ -36,19 +36,19 @@ class HomeScreen extends StatelessWidget {
                             title: products,
                             count: "${data.length}",
                             Icon: icProducts),
-                        dashBoardButton(context,
-                            title: orders, count: "88", Icon: icOrders)
+                        // dashBoardButton(context,
+                        //     title: orders, count: "88", Icon: icOrders)
                       ]),
                   10.heightBox,
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      dashBoardButton(context,
-                          title: rating, count: "88", Icon: icStar),
-                      dashBoardButton(context,
-                          title: totalSale, count: "88", Icon: icOrders),
-                    ],
-                  ),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  //   children: [
+                  //     dashBoardButton(context,
+                  //         title: rating, count: "8", Icon: icStar),
+                  //     dashBoardButton(context,
+                  //         title: totalSale, count: "88", Icon: icOrders),
+                  //   ],
+                  // ),
                   10.heightBox,
                   const Divider(
                     thickness: 2,

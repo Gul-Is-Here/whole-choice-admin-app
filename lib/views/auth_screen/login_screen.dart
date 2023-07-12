@@ -45,6 +45,7 @@ class LoginScreen extends StatelessWidget {
                 () => Column(
                   children: [
                     TextFormField(
+                      cursorColor: white,
                       controller: controller.emailController,
                       decoration: const InputDecoration(
                           filled: true,
@@ -53,8 +54,10 @@ class LoginScreen extends StatelessWidget {
                           border: InputBorder.none,
                           hintText: emailHint),
                     ),
-                    10.heightBox,
+                    20.heightBox,
                     TextFormField(
+                      cursorColor: white,
+                      obscureText: true,
                       controller: controller.passwordController,
                       decoration: const InputDecoration(
                           filled: true,
@@ -63,14 +66,9 @@ class LoginScreen extends StatelessWidget {
                           border: InputBorder.none,
                           hintText: passwordHint),
                     ),
-                    20.heightBox,
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: TextButton(
-                          onPressed: () {},
-                          child: normalText(
-                              text: forgotPassword, color: purpleColor)),
-                    ),
+                    40.heightBox,
+                    // normalText(
+                    //     text: forgotPassword, color: purpleColor),
                     SizedBox(
                         width: context.screenWidth - 100,
                         child: controller.isLoading.value
@@ -91,7 +89,8 @@ class LoginScreen extends StatelessWidget {
                                       controller.isLoading(false);
                                     }
                                   });
-                                }))
+                                })),
+                    10.heightBox
                   ],
                 )
                     .box
@@ -103,7 +102,7 @@ class LoginScreen extends StatelessWidget {
               ),
               10.heightBox,
               Center(child: normalText(text: anyProblem, color: lightGrey)),
-              Spacer(),
+              const Spacer(),
               Center(
                 child: boldText(text: credit),
               ),

@@ -57,12 +57,12 @@
             ]
         },
         {
-            "name": "Cellphone & Tab",
-            "subcategory": [
-                "Smartphone",
+            "name": "Mobiles & Tabs",
+            "subcategory":[
+                "Smaprtphone",
                 "Tablets",
                 "Smart Watches",
-                "Accessories"
+                "Accesseries"
             ]
         },
         {

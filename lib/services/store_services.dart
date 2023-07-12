@@ -36,4 +36,10 @@ class StoreService {
   //       .where("vendor_id", isEqualTo: uid)
   //       .orderBy('p_wishlist'.length);
   // }
+  static getOrders(uid) {
+    return firestore
+        .collection(ordersCollection)
+        .where('vendors', arrayContains: uid)
+        .snapshots();
+  }
 }
